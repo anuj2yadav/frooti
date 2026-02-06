@@ -8,8 +8,9 @@ const Valentine = () => {
 
   const phrases = [
     "Shruti, will you be my Valentine?",  // 0
-    "No? Are you sure?",                  // 1
-    "What if I ask nicely?",              // 2
+                      // 1
+    "What if I ask nicely?", 
+    "Frooti!Are you so sweet you can't say no"   ,          // 2
     "Pretty please?",                     // 3
     "I'll get you chocolate!",            // 4
     "What about pizza?",                  // 5
