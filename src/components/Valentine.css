@@ -1,37 +1,61 @@
+/* --- VITE FULL SCREEN FIX --- */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars */
+}
+
+/* --- MAIN CONTAINER --- */
 .valentine-container {
-    background-color: #fff0f5;
-    /* Big Heart Background */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffc0cb' opacity='0.4' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 80vmin; 
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
-  }
+  /* Force it to take full width/height of the viewport */
+  width: 100vw;
+  height: 100vh; 
+  position: absolute;
+  top: 0;
+  left: 0;
   
-  .card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
-    transition: all 0.3s ease;
-  }
+  /* Big Heart Background Settings */
+  background-color: #fff0f5; /* Soft Pink Base */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffc0cb' opacity='0.4' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80vmin; /* Keeps heart proportional to screen size */
   
-  /* Button Styling */
-  .btn {
-    border-radius: 50px;
-    transition: all 0.2s ease;
-  }
-  
-  .btn:active {
-    transform: scale(0.95);
-  }
-  
-  /* Success Animation */
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- CARD STYLING --- */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px !important;
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+  border: 1px solid rgba(255, 192, 203, 0.5);
+  transition: all 0.3s ease;
+  z-index: 10; /* Ensures card sits above background */
+}
+
+/* --- BUTTON STYLING --- */
+.btn {
+  border-radius: 50px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* --- ANIMATIONS --- */
+.transition-text {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
